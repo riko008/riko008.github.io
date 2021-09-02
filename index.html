@@ -11,6 +11,8 @@
     <!-- Bootstrao Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     <!-- Akhir Bootstrap Icon -->
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- My css -->
     <link rel="stylesheet" href="style.css" />
     <!-- end my css -->
@@ -48,7 +50,7 @@
     <section class="jumbotron text-center">
       <img src="img/RIKO.JPG" alt="Hendriko Fernandes" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Hendriko Fernandes</h1>
-      <p class="lead">Freelancer</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -60,17 +62,17 @@
     <!-- akhir jumbotron -->
     <!-- about -->
     <section id="about">
-      <div class="container">
+      <div class="container" >
         <div class="row text-center mb-3">
           <div class="col">
             <h2>About Me</h2>
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000" >
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus labore, nesciunt tenetur non nulla deserunt consectetur dolores temporibus a ab.</p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores commodi repellat, vel voluptatibus fugit tempora perspiciatis. Tenetur eum iste ratione minima, dignissimos praesentium ea aut.</p>
           </div>
         </div>
@@ -94,7 +96,7 @@
         </div>
         <div class="row">
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="500">
               <img src="img/projects/1.jpg" class="card-img-top" alt="Projects1" />
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -102,7 +104,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="100">
               <img src="img/projects/2.jpg" class="card-img-top" alt="Projects2" />
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -110,7 +112,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="200">
               <img src="img/projects/5.jpg" class="card-img-top" alt="Projects5" />
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -185,6 +187,22 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/TextPlugin.min.js"></script>
+  <script>
+    gsap.registerPlugin(TextPlugin);
+    gsap.to('.lead', {duration: 1.5, delay: 1.5, text: 'Freelancer'})
+    gsap.from('.jumbotron img', { duration: 1, rotateY: 360, opacity:0 });
+    gsap.from('.navbar', {duration:1.5, y: '-100%', opacity: 0, ease: 'bounce'});
+    gsap.from('.display-4', {duration:1, x: -50, opacity: 0, delay: 0.5, ease: 'back'});
+    </script>
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycby5NQ8rfKH9gUqArJgulydGwzxmLn79PxdOMKgikcNNk84U8taT_4eaV5TGRG4ccEJnvA/exec';
       const form = document.forms['kt-contact-form'];
